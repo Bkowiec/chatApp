@@ -1,26 +1,3 @@
-![Preview](./preview/desktop-preview.png)
-
-# MEAN Chat App
-
-> A small chat application built using the **MEAN** stack
-
-* Feel free to try the live demo at http://petrub.com/chat-app
-
-# Features
-
-* Register and authenticate users using JSON web tokens
-
-* Join a common room where you can chat with all the registered users
-
-* Open 1on1 private conversations with a user of your choice
-
-* Notifications for messages on background conversations
-
-* Have a pleasant UI/UX built to look awesome from mobile to desktop
-
-<p align="center">
-  <img src="https://media.giphy.com/media/3o7bukiR089wb4ayTm/giphy.gif" alt="Desktop Preview"/>
-</p>
 
 # Getting started
 
@@ -95,15 +72,3 @@ On the client-side users can create accounts that will be stored in the database
 Once authenticated, the server creates a socket bidirectional connection with the client to facilitate the chat functionality.
 
 Every time a user sends a message, this goes to the server which redirects it to the desired respondent. Also every time a user enters or leaves chat, the server announces all the connected clients.
-
-# Motivation
-
-This is a personal project with the purpose of better understanding the client-server communication paradigm, new web technologies, especially Angular :)
-
-<p align="center">
-  <img src="https://media.giphy.com/media/3oKIPsMIQbwHIuvGda/giphy.gif" alt="Mobile Preview"/>
-</p>
-
-# [Issues](https://github.com/petr166/mean-chat-app/issues)
-
-If you want to help don't hesitate to come up with ideas, bug reports, make pull requests, all you can do. Also if you have any questions, please use the same issues page

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { BlogService } from '../../services/blog.service';
-import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'app-blog',
@@ -225,12 +224,6 @@ export class BlogComponent implements OnInit {
     });
 
     this.getAllBlogs(); 
-
-    Observable.interval(4000).subscribe(x => {
-      this.getAllBlogs();
-    });
-
-
   }
 
 }

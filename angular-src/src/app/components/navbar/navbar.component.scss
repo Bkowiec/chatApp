@@ -3,6 +3,8 @@
 .navbar-default {
   @include box-shadow($x: 0px, $y: 2px, $blur: 10px);
 
+  background: #272823;
+
   a.navbar-brand {
     padding: 13px 15px;
 
@@ -10,4 +12,8 @@
       margin-right: 4px;
     }
   }
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+  background: red;
 }

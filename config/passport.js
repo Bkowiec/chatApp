@@ -18,7 +18,8 @@ module.exports = (passport) => {
       if (user) {
         let signData = {
           id: user._id,
-          username: user.username
+          username: user.username,
+          avatar: user.avatar
         }
         return done(null, signData);
       } else {

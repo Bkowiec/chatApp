@@ -96,6 +96,7 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
   getUserList(): void {
     this.chatService.getUserList()
       .subscribe(data => {
+        console.log(data)
         if (data.success == true) {
           let users = data.users;
           for (let i = 0; i < users.length; i++) {

@@ -10,6 +10,11 @@
   padding-right: 4px;
 }
 
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  background-color: green !important
+}
+
 .chat-container {
   border: none;
   margin-top: -21px;
@@ -23,8 +28,8 @@
     margin: 0;
     margin-bottom: 4px;
     border: none;
-    @include border-radius-separate($topLeftRadius: 0, $topRightRadius: 0, $bottomLeftRadius: 5px, $bottomRightRadius: 5px)
-    background-color: lighten(#2c3e50, 20%);
+    @include border-radius-separate($topLeftRadius: 0, $topRightRadius: 0, $bottomLeftRadius: 5px, $bottomRightRadius: 5px);
+    background-color: lighten(#272823, 20%);
     @include box-shadow($x: 0px, $y: 2px);
 
     span {

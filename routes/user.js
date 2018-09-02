@@ -14,9 +14,11 @@ router.post('/register', (req, res, next) => {
     return next(err);
   }
   else {
+    var avatars = ['a','b','c','d','e','f','g','h','i'];
     let newUser = new User({
       username: req.body.username,
       password: req.body.password,
+      avatar: "/assets/img/avatars/" + avatars[Math.floor(Math.random()*avatars.length)] + ".png"
     });
 
     User.addUser(newUser, (err, user) => {
@@ -28,7 +30,8 @@ router.post('/register', (req, res, next) => {
         response.msg = "User registered successfuly";
         response.user = {
           id: user._id,
-          username: user.username
+          username: user.username,
+          avatar: user.avatar
         }
         console.log("[%s] registered successfuly", user.username);
         res.json(response);
@@ -48,7 +51,8 @@ router.post("/authenticate", (req, res, next) => {
     } else { // create the unique token for the user
         let signData = {
           id: user._id,
-          username: user.username
+          username: user.username,
+          avatar: user.avatar
         };
         let token = jwt.sign(signData, config.secret, {
           expiresIn: 604800
@@ -70,6 +74,7 @@ router.get('/profile', passport.authenticate("jwt", {session: false}), (req, res
   let response = {success: true};
   response.msg = "Profile retrieved successfuly";
   response.user = req.user;
+  console.log(req.user.avatar)
   res.json(response);
 });
 

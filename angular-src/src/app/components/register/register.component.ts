@@ -28,7 +28,8 @@ export class RegisterComponent implements OnInit {
       //controlname: ['initial value', rules]
       username: ['', [ Validators.required, Validators.minLength(4), Validators.maxLength(14) ]],
       password: ['', [ Validators.required , Validators.minLength(4) ]],
-      confirmPass: ['', [ Validators.required, Validators.minLength(4) ]]
+      confirmPass: ['', [ Validators.required, Validators.minLength(4) ]],
+      avatar: 'asdf'
     });
   }
 

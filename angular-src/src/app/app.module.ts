@@ -16,7 +16,6 @@ import { MessageComponent } from './components/message/message.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthService } from "./services/auth.service";
 import { AuthGuard } from "./guards/auth.guard";
-import { ChatService } from "./services/chat.service";
 import { ActiveListComponent } from './components/active-list/active-list.component';
 
 
@@ -24,6 +23,14 @@ import { BlogComponent } from './components/blog/blog.component';
 import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
 import { DeleteBlogComponent } from './components/blog/delete-blog/delete-blog.component';
 import { BlogService } from './services/blog.service';
+import {ChatService} from './services/chat.service';
+import { GameComponent } from './components/game/game.component';
+import {GameScoreService} from './services/game.score.service';
+import {Camera} from './game/camera';
+import {ShapeDrawer} from './game/shape.drawer';
+import { GameEndComponent } from './components/game-end/game-end.component';
+import { GameMenuComponent } from './components/game-menu/game-menu.component';
+import { GameScoreComponent } from './components/game-score/game-score.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,11 +46,22 @@ const appRoutes: Routes = [
     component: EditBlogComponent,
     canActivate: [AuthGuard]
 },
+
 {
   path: 'delete-blog/:id',
   component: DeleteBlogComponent,
   canActivate: [AuthGuard]
 },
+  {
+    path: 'game',
+    component: GameComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'game-score',
+    component: GameScoreComponent,
+    canActivate: [AuthGuard]
+  },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'chat', canActivate: [AuthGuard], children: [
     { path: ':chatWith', component: ChatRoomComponent },
@@ -65,7 +83,11 @@ const appRoutes: Routes = [
     ProfileComponent,
     ChatRoomComponent,
     MessageComponent,
-    ActiveListComponent
+    ActiveListComponent,
+    GameComponent,
+    GameEndComponent,
+    GameMenuComponent,
+    GameScoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +101,10 @@ const appRoutes: Routes = [
     AuthGuard,
     AuthService,
     ChatService,
-    BlogService
+    BlogService,
+    Camera,
+    ShapeDrawer,
+    GameScoreService
   ],
   bootstrap: [AppComponent]
 })

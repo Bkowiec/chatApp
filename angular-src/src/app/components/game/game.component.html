@@ -1,0 +1,40 @@
+<div [style.display]="(!gameStarted || gameEnded) ? 'none' : 'block' " class="game-container noselect">
+  <div style="width: 100%; padding-right: 10px;">
+    <div *ngIf="showStartInfo" class="animate one">
+      <span>N</span>
+      <span>A</span>
+      <span>P</span>
+      <span>R</span>
+      <span>Z</span>
+      <span>Ó</span>
+      <span>D</span>
+    </div>
+    <div *ngIf="isPain" class="animate one">
+      <span>B</span>
+      <span>Ó</span>
+      <span>L</span>
+    </div>
+    <div *ngIf="isDead" class="animate two">
+      <span>Ś</span>
+      <span>M</span>
+      <span>I</span>
+      <span>E</span>
+      <span>R</span>
+      <span>Ć</span>
+    </div>
+    <div  class="game-info container">
+      <div class="row">
+        <div class="col-lg-6" style="text-align: left;">
+          <button type="button" class="btn-primary" (click)="resetGame()">Jescze raz</button>
+        </div>
+        <div class="col-lg-6" style="text-align: right;">
+          Wynik: {{score}} <br />
+          Pozostały czas: {{timeLeft}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas #gameCanvas width="1024px" height="500px" style="background-color: black"></canvas>
+</div>
+<app-game-menu *ngIf="!gameStarted && !gameEnded" (carChosen)="onCarChosen($event)"></app-game-menu>
+<app-game-end *ngIf="gameStarted && gameEnded" (playAgain)="onPlayAgainAfterGameEnd()" (saveGameScore)="onSaveGameScore($event)" [gameScore]="score"></app-game-end>

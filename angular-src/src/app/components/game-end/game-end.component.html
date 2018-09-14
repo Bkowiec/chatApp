@@ -1,0 +1,30 @@
+<div class="game-container" style="height: 800px;">
+  <div class="row">
+    <div class="animate game-title noselect">
+      <span>Ś</span>
+      <span>M</span>
+      <span>I</span>
+      <span>E</span>
+      <span>R</span>
+      <span>Ć</span>&nbsp;
+      <span>I</span>&nbsp;
+      <span>B</span>
+      <span>Ó</span>
+      <span>L</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12" style="font-size: 50px;">
+      Twój wynik: {{gameScore}}
+    </div>
+  </div>
+  <div class="row" style="font-size: 30px;">
+    <div class="col-lg-2">&nbsp;</div>
+    <div class="col-lg-4">
+      <button type="button" class="btn-primary" (click)="onPlayAgainButtonClicked()"> Zagraj jeszcze raz!</button>
+    </div>
+    <div class="col-lg-4">
+      <button type="button" class="btn-primary" (click)="onSaveBestScoreButtonClicked()">Zapisz się na listę najlepszych wyników</button>
+    </div>
+  </div>
+</div>

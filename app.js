@@ -7,6 +7,7 @@ const passport = require('passport');
 const errorMiddleware = require('./middleware/error');
 const config = require('./config');
 const router = express.Router();
+const gameScores = require('./routes/gameScores')(router);
 
 // import routes
 const userRoutes = require('./routes/user');
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(`${config.root}/users`, userRoutes);
 app.use(`${config.root}/messages`, messageRoutes);
 app.use(`${config.root}/blogs`, blogRoutes);
+app.use(`${config.root}/games`, gameScores);
 
 // set error handling middleware
 app.use(errorMiddleware);

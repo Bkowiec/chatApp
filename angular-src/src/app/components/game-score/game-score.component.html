@@ -1,0 +1,20 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">User</th>
+    <th scope="col">Score</th>
+    <th scope="col">Car type</th>
+    <th scope="col">Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let gameScore of gameScores;  let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{gameScore.createdBy}}</td>
+    <td>{{gameScore.score}}</td>
+    <td>{{gameScore.carType}}</td>
+    <td>{{gameScore.createdAt | date}}</td>
+  </tr>
+  </tbody>
+</table>
